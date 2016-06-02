@@ -225,6 +225,11 @@ function listenWallet(callback) {
     utils.print(tx);
     utils.print(map);
   });
+  client.on('address', function(receive, change) {
+    utils.print('New addresses allocated:');
+    utils.print(receive);
+    utils.print(change);
+  });
   client.on('balance', function(tx, map) {
     utils.print('Balance:');
     utils.print(tx);
